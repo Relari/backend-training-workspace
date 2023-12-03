@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  # Configuración del servicio de la aplicación Spring Boot
+#  myapp:
+#    container_name: API_BACKEND_TRAINING_DEV
+#    build: .
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - db
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres_db_local
+#      SPRING_DATASOURCE_USERNAME: postgres
+#      SPRING_DATASOURCE_PASSWORD: 123456
+
+  # Configuración del servicio de la base de datos Postgres
+  db:
+    container_name: MYSQL_DB_LOCAL
+    image: 'mysql:8.0-oracle'
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: mysql_db_local
+#      POSTGRES_USER: root
+      MYSQL_ROOT_PASSWORD: 123456

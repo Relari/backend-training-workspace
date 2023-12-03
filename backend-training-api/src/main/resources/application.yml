@@ -1,0 +1,21 @@
+spring:
+  profiles.active: local
+
+application:
+  info:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+  api:
+    path: '/application/api/v1/students'
+
+springdoc:
+  api-docs:
+    path: '${application.api.path}/openapi'
+
+  swagger-ui:
+    path: '${application.api.path}/swagger-ui.html'
+
+logging:
+  level:
+    com.pe.relari: TRACE

@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "788cdd87-ed3d-4756-8959-fe261302e52f",
+		"name": "Backend-Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "Find Student By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/v1/students/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"v1",
+								"students",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Info By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/api/v1/students/:id/info",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"api",
+								"v1",
+								"students",
+								":id",
+								"info"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Code By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/v1/students/:id/code",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"v1",
+								"students",
+								":id",
+								"code"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Address By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/v1/students/:id/address",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"v1",
+								"students",
+								":id",
+								"address"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"gender\": \"M\",\r\n  \"firstName\": \"Daniel\",\r\n  \"documentIdentity\": \"70605399\",\r\n  \"lastName\": \"Lavado\",\r\n  \"dateOfBirth\": \"03/05/1995\",\r\n  \"email\": \"renzolavador@gmail.com\",\r\n  \"phoneNumber\": \"979896723\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/application/v1/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/application/v1/students",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"application",
+								"v1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
