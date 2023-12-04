@@ -7,8 +7,11 @@ import com.pe.relari.backendtrainingapi.model.api.StudentResponse;
 import com.pe.relari.backendtrainingapi.model.business.Address;
 import com.pe.relari.backendtrainingapi.model.business.Student;
 import com.pe.relari.backendtrainingapi.util.StudentConstant;
+import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Named;
+
 import java.util.List;
 
 /**
@@ -20,6 +23,7 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface StudentMapper {
 
+  @Named("mapStudent")
   @Mapping(source = "email", target = "address.email")
   @Mapping(source = "phoneNumber", target = "address.phoneNumber")
   @Mapping(target = "studentCode", expression = "java(generateStudentCodeDefault())")
@@ -43,5 +47,20 @@ public interface StudentMapper {
   }
 
   AddressResponse mapAddressResponse(Address address);
+
+  @IterableMapping(qualifiedByName = "mapStudent")
+  List<Student> mapStudents(List<StudentRequest> studentRequests);
+
+  @Named("genderDescription")
+  default String genderDescription(String genderCode) {
+    return genderCode.equals("M") ? "MALE" : "FEMALE";
+  }
+
+  @Mapping(source = "email", target = "address.email")
+  @Mapping(source = "phoneNumber", target = "address.phoneNumber")
+  @Mapping(target = "studentCode", expression = "java(generateStudentCodeDefault())")
+  @Mapping(target = "status", expression = "java(Boolean.TRUE)")
+  @Mapping(target = "gender", source = "gender", qualifiedByName = "genderDescription")
+  Student mapStudent2(StudentRequest studentRequest);
 
 }

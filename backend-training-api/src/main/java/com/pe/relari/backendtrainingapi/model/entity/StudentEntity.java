@@ -2,6 +2,7 @@ package com.pe.relari.backendtrainingapi.model.entity;
 
 import javax.persistence.*;
 
+import com.pe.relari.backendtrainingapi.util.GenderEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,8 +29,9 @@ public class StudentEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
 
+  @Enumerated(EnumType.STRING)
   @Column(name = "gender", nullable = false, length = 1)
-  private String gender;
+  private GenderEnum gender;
 
   @Column(name = "firstName", nullable = false, length = 20)
   private String firstName;

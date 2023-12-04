@@ -3,6 +3,7 @@ package com.pe.relari.backendtrainingapi.dao.impl;
 import com.pe.relari.backendtrainingapi.model.business.Address;
 import com.pe.relari.backendtrainingapi.model.business.Student;
 import com.pe.relari.backendtrainingapi.model.entity.StudentEntity;
+import com.pe.relari.backendtrainingapi.util.GenderEnum;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -26,7 +27,7 @@ class StudentMapper {
         .id(entity.getId())
         .dateOfBirth(entity.getDateOfBirth())
         .firstName(entity.getFirstName())
-        .gender(entity.getGender())
+        .gender(entity.getGender().name())
         .lastName(entity.getLastName())
         .documentIdentity(entity.getDocumentIdentity())
         .studentCode(entity.getStudentCode())
@@ -45,7 +46,7 @@ class StudentMapper {
         .id(student.getId())
         .dateOfBirth(student.getDateOfBirth())
         .firstName(student.getFirstName())
-        .gender(student.getGender())
+        .gender(GenderEnum.valueOf(student.getGender()))
         .lastName(student.getLastName())
         .documentIdentity(student.getDocumentIdentity())
         .studentCode(student.getStudentCode())

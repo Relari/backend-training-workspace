@@ -23,7 +23,7 @@ class StudentMapperTest {
     Student student = StudentMapper.mapStudent(studentEntity);
 
     Assertions.assertEquals(studentEntity.getFirstName(), student.getFirstName());
-    Assertions.assertEquals(studentEntity.getGender(), student.getGender());
+    Assertions.assertEquals(studentEntity.getGender().name(), student.getGender());
     Assertions.assertEquals(studentEntity.getLastName(), student.getLastName());
     Assertions.assertEquals(studentEntity.getDocumentIdentity(), student.getDocumentIdentity());
     Assertions.assertEquals(studentEntity.getStudentCode(), student.getStudentCode());
@@ -38,7 +38,7 @@ class StudentMapperTest {
     StudentEntity entity = StudentMapper.mapStudentEntity(student);
 
     Assertions.assertEquals(student.getFirstName(), entity.getFirstName());
-    Assertions.assertEquals(student.getGender(), entity.getGender());
+    Assertions.assertEquals(student.getGender(), entity.getGender().name());
     Assertions.assertEquals(student.getLastName(), entity.getLastName());
     Assertions.assertEquals(student.getDocumentIdentity(), entity.getDocumentIdentity());
     Assertions.assertEquals(student.getStudentCode(), entity.getStudentCode());

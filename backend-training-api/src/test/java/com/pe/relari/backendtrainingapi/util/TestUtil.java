@@ -29,7 +29,7 @@ public class TestUtil {
                 .firstName("Jose")
                 .lastName("Gonzales")
                 .documentIdentity("12345678")
-                .gender("M")
+                .gender(GenderEnum.M)
                 .studentCode("20210000")
                 .dateOfBirth(LocalDate.now())
                 .email("email@mail.com")

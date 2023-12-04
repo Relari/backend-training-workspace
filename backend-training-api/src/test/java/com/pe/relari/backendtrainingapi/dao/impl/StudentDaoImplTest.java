@@ -51,7 +51,7 @@ class StudentDaoImplTest {
                     response.getLastName().equals(studentEntity.getLastName())
             )
             .assertValueAt(0, response ->
-                    response.getGender().equals(studentEntity.getGender())
+                    response.getGender().equals(studentEntity.getGender().name())
             )
             .assertValueAt(0, response ->
                     response.getStudentCode().equals(studentEntity.getStudentCode())
@@ -109,7 +109,7 @@ class StudentDaoImplTest {
                     response.getLastName().equals(studentEntity.getLastName())
             )
             .assertValue(response ->
-                    response.getGender().equals(studentEntity.getGender())
+                    response.getGender().equals(studentEntity.getGender().name())
             )
             .assertValue(response ->
                     response.getStudentCode().equals(studentEntity.getStudentCode())
@@ -153,7 +153,7 @@ class StudentDaoImplTest {
                     response.getLastName().equals(studentEntity.getLastName())
             )
             .assertValue(response ->
-                    response.getGender().equals(studentEntity.getGender())
+                    response.getGender().equals(studentEntity.getGender().name())
             )
             .assertValue(response ->
                     response.getStudentCode().equals(studentEntity.getStudentCode())
